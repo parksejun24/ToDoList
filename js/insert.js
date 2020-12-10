@@ -3,56 +3,109 @@ var yes = 0;
 
 function createToDoText() {
     var text = document.createElement('input');
-    text.id = countId + "_" + "text";
+    text.id = countId + "_" + "ToDoTextList";
     text.className = "ToDoTextBox";
     text.type = "text";
-    text.name = "ToDotextList";
+    text.name = countId + "_" + "ToDoTextList";
     text.placeholder = "To-Do";
     return text;
 }
 
 function createSubjectText() {
     var text = document.createElement('input');
-    text.id = countId + "_" + "text";
+    text.id = countId + "_" + "SubjectTextList";
     text.className = "TimeTextBox";
     text.type = "text";
     text.placeholder = "과목";
-    text.name = "SubjectTextList";
+    text.name = countId + "_" + "SubjectTextList";
     return text;
 }
 
 function createStartTimeText() {
     var text = document.createElement('input');
-    text.id = countId + "_" + "text";
+    text.id = countId + "_" + "TimeTextBox1";
     text.className = "TimeTextBox";
     text.type = "text";
     text.placeholder = "시작시간";
-    text.name = "TimeTextList";
+    text.name = countId + "_" + "TimeTextList";
     return text;
 }
 
 function createFinishTimeText() {
     var text = document.createElement('input');
-    text.id = countId + "_" + "text";
+    text.id = countId + "_" + "TimeTextBox2";
     text.className = "TimeTextBox";
     text.type = "text";
     text.placeholder = "종료시간";
-    text.name = "TimeTextList";
+    text.name = countId + "_" + "TimeTextList";
     return text;
 }
 
+function createBr() {
+    var br = document.createElement("br");
+    br.id = countId + "_" + "br";
+    return br;
+}
+
+function createlabel() {
+    var label = document.createElement("label");
+    label.className = "DeleteButtonLabel";
+    label.id = countId + "_" + "DeleteButtonLabel";
+    label.setAttribute("for", countId + "_" + "DeleteButton");
+    return label;
+}
+
+function createDeleteButton() {
+    var deleteButton = document.createElement('input');
+    deleteButton.id = countId + "_" + "DeleteButton";
+    deleteButton.className = "DeleteButton";
+    deleteButton.type = "checkbox";
+    deleteButton.name = "DeleteButton";
+    deleteButton.value = countId;
+    deleteButton.onclick = function () {
+        if (deleteButton.checked) {
+            var lastindex = deleteButton.value.toString();
+            var indexCount = lastindex.length;
+            var num = String(deleteButton.id).substring(0, indexCount);
+            console.log(num + "_" + "ToDoTextList");
+
+            var where1 = document.getElementById(num + "_" + "ToDoTextList");
+            var where2 = document.getElementById(num + "_" + "SubjectTextList");
+            var where3 = document.getElementById(num + "_" + "TimeTextBox1");
+            var where4 = document.getElementById(num + "_" + "TimeTextBox2");
+            var where5 = document.getElementById(num + "_" + "DeleteButton");
+            var where6 = document.getElementById(num + "_" + "DeleteButtonLabel");
+            var where7 = document.getElementById(num + "_" + "br");
+
+            list.removeChild(where1);
+            list.removeChild(where2);
+            list.removeChild(where3);
+            list.removeChild(where4);
+            list.removeChild(where5);
+            list.removeChild(where6);
+            list.removeChild(where7);
+        }
+    }
+    return deleteButton;
+}
+
 function clickButton() {
+    countId++;
     var where = document.getElementById("list");
-    var input1 = createFinishTimeText();
-    var input2 = createStartTimeText();
-    var input3 = createToDoText();
-    var input4 = createSubjectText();
-    var input5 = document.createElement("br");
+    var input1 = createlabel();
+    var input2 = createDeleteButton();
+    var input3 = createFinishTimeText();
+    var input4 = createStartTimeText();
+    var input5 = createToDoText();
+    var input6 = createSubjectText();
+    var input7 = createBr();
+
     where.appendChild(input1);
     where.insertBefore(input2, input1);
     where.insertBefore(input3, input2);
     where.insertBefore(input4, input3);
     where.insertBefore(input5, input4);
-    countId++;
+    where.insertBefore(input6, input5);
+    where.insertBefore(input7, input6);
 }
 

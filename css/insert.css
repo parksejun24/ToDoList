@@ -11,6 +11,14 @@ body{
 input[type=text]:focus{
     outline: none;
 }
+
+.DonecheckBox{
+    zoom: 1.7;
+    margin-bottom: 0px;
+    margin-right: 10px;
+    position: relative;
+    top: 2.5px;
+}
     
 
 .ToDoTextBox{
@@ -20,6 +28,7 @@ input[type=text]:focus{
     margin-right: 10px;
     width: 400px;
     text-decoration: none;
+    border: 0px;
 }
 
 .TimeTextBox{
@@ -29,6 +38,7 @@ input[type=text]:focus{
     width: 100px;
     margin-right: 10px;
     text-decoration: none;
+    border: 0px;
 }
 
 .createSubjectText{
@@ -38,6 +48,7 @@ input[type=text]:focus{
     width: 100px;
     margin-right: 10px;
     text-decoration: none;
+    border: 0px;
 }
 
 form{
@@ -46,7 +57,7 @@ form{
 
 #all{
     margin: 0 auto;
-    width: 800px;
+    width: 820px;
     margin-top: 30px;
 }
 
@@ -82,4 +93,19 @@ form{
 #list{
     position: relative;
     top: 15px;
+}
+
+.DeleteButton{
+    position: relative;
+    top: 1.45px;
+    display: none;
+}
+
+.DeleteButtonLabel{
+    display: inline-block; 
+    width:17px; 
+    height: 17px; 
+    background: #fa3062;
+    cursor: pointer; 
+    border-radius: 3px;
 }

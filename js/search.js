@@ -4,7 +4,7 @@ var yes = 0;
 function createCheckBox() {
     var checkbox = document.createElement('input');
     checkbox.id = countId + "_" + "checkBox";
-    checkbox.className = "checkBox"
+    checkbox.className = "DonecheckBox"
     checkbox.value = 'N'
     checkbox.type = "checkbox";
     checkbox.name = countId + "_" + "checkBoxList"
@@ -12,15 +12,16 @@ function createCheckBox() {
         if (checkbox.checked) {
             checkbox.value = 'Y'
             num = String(checkbox.id).substring(0, 1);
-            document.getElementById(num + "_" + "ToDotextList").style.textDecoration = "line-through";
+            document.getElementById(num + "_" + "ToDoTextList").style.textDecoration = "line-through";
         } else {
             checkbox.value = 'N'
             num = String(checkbox.id).substring(0, 1);
-            document.getElementById(num + "_" + "ToDotextList").style.textDecoration = "none";
+            document.getElementById(num + "_" + "ToDoTextList").style.textDecoration = "none";
         }
     }
     return checkbox;
 }
+
 function createToDoText() {
     var text = document.createElement('input');
     text.id = countId + "_" + "ToDoTextList";
@@ -67,6 +68,14 @@ function createBr() {
     return br;
 }
 
+function createlabel() {
+    var label = document.createElement("label");
+    label.className = "DeleteButtonLabel";
+    label.id = countId + "_" + "DeleteButtonLabel";
+    label.setAttribute("for", countId + "_" + "DeleteButton");
+    return label;
+}
+
 function createDeleteButton() {
     var deleteButton = document.createElement('input');
     deleteButton.id = countId + "_" + "DeleteButton";
@@ -87,7 +96,8 @@ function createDeleteButton() {
             var where4 = document.getElementById(num + "_" + "TimeTextBox2");
             var where5 = document.getElementById(num + "_" + "checkBox");
             var where6 = document.getElementById(num + "_" + "DeleteButton");
-            var where7 = document.getElementById(num + "_" + "br");
+            var where7 = document.getElementById(num + "_" + "DeleteButtonLabel");
+            var where8 = document.getElementById(num + "_" + "br");
 
             list.removeChild(where1);
             list.removeChild(where2);
@@ -96,6 +106,7 @@ function createDeleteButton() {
             list.removeChild(where5);
             list.removeChild(where6);
             list.removeChild(where7);
+            list.removeChild(where8);
         }
     }
     return deleteButton;
@@ -105,13 +116,14 @@ function createDeleteButton() {
 function clickButton() {
     countId++;
     var where = document.getElementById("list");
-    var input1 = createDeleteButton();
-    var input2 = createFinishTimeText();
-    var input3 = createStartTimeText();
-    var input4 = createToDoText();
-    var input5 = createSubjectText();
-    var input6 = createCheckBox();
-    var input7 = createBr();
+    var input1 = createlabel();
+    var input2 = createDeleteButton();
+    var input3 = createFinishTimeText();
+    var input4 = createStartTimeText();
+    var input5 = createToDoText();
+    var input6 = createSubjectText();
+    var input7 = createCheckBox();
+    var input8 = createBr();
 
     where.appendChild(input1);
     where.insertBefore(input2, input1);
@@ -120,5 +132,6 @@ function clickButton() {
     where.insertBefore(input5, input4);
     where.insertBefore(input6, input5);
     where.insertBefore(input7, input6);
+    where.insertBefore(input8, input7);
 }
 

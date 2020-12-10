@@ -12,8 +12,8 @@ input[type=text]:focus{
     outline: none;
 }
 
-input[type=checkbox] {
-    zoom: 2;
+.DonecheckBox{
+    zoom: 1.7;
     margin-bottom: 0px;
     margin-right: 10px;
     position: relative;
@@ -57,7 +57,7 @@ form{
 
 #all{
     margin: 0 auto;
-    width: 1000px;
+    width: 820px;
     margin-top: 30px;
 }
 
@@ -96,8 +96,16 @@ form{
 }
 
 .DeleteButton{
-    width: 10px;
-    height: 20px;
-    color: aqua;
-    cursor: pointer;
+    position: relative;
+    top: 1.45px;
+    display: none;
+}
+
+.DeleteButtonLabel{
+    display: inline-block; 
+    width:17px; 
+    height: 17px; 
+    background: #fa3062;
+    cursor: pointer; 
+    border-radius: 3px;
 }
