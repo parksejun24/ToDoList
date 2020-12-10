@@ -13,16 +13,13 @@ input[type=text]:focus{
 }
 
 input[type=checkbox] {
-    zoom: 1.5;
+    zoom: 2;
+    margin-bottom: 0px;
+    margin-right: 10px;
+    position: relative;
+    top: 2.5px;
 }
     
-.checkBox{
-    size: 10px;
-}
-
-.checkBox{
-    size: 10px;
-}
 
 .ToDoTextBox{
     border-radius: 10px;
@@ -31,6 +28,7 @@ input[type=checkbox] {
     margin-right: 10px;
     width: 400px;
     text-decoration: none;
+    border: 0px;
 }
 
 .TimeTextBox{
@@ -40,6 +38,7 @@ input[type=checkbox] {
     width: 100px;
     margin-right: 10px;
     text-decoration: none;
+    border: 0px;
 }
 
 .createSubjectText{
@@ -49,6 +48,7 @@ input[type=checkbox] {
     width: 100px;
     margin-right: 10px;
     text-decoration: none;
+    border: 0px;
 }
 
 form{
@@ -93,4 +93,11 @@ form{
 #list{
     position: relative;
     top: 15px;
+}
+
+.DeleteButton{
+    width: 10px;
+    height: 20px;
+    color: aqua;
+    cursor: pointer;
 }
