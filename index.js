@@ -1,11 +1,12 @@
 var countId = 0;
+var yes = 0;
 
 function createInput() {
     var checkbox = document.createElement('input');
     checkbox.id = countId + "_" + "checkBox";
     checkbox.className = "checkBox"
     checkbox.type = "checkbox";
-    checkbox.name = "checkBoxList"
+    checkbox.name = countId + "_" + "checkBoxList"
     checkbox.onclick = function () {
         if (checkbox.checked) {
             num = String(checkbox.id).substring(0, 1);
@@ -23,7 +24,7 @@ function createText() {
     text.id = countId + "_" + "text";
     text.className = "textBox";
     text.type = "text";
-    text.name = "textList"
+    text.name = countId + "_" + "textList"
     return text;
 }
 
@@ -39,3 +40,4 @@ function clickButton() {
     where.appendChild(input);
     countId++;
 }
+
