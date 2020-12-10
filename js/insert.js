@@ -6,7 +6,7 @@ function createToDoText() {
     text.id = countId + "_" + "text";
     text.className = "ToDoTextBox";
     text.type = "text";
-    text.name = countId + "_" + "ToDotextList";
+    text.name = "ToDotextList";
     text.placeholder = "To-Do";
     return text;
 }
@@ -17,7 +17,7 @@ function createSubjectText() {
     text.className = "TimeTextBox";
     text.type = "text";
     text.placeholder = "과목";
-    text.name = countId + "_" + "SubjectTextList";
+    text.name = "SubjectTextList";
     return text;
 }
 
@@ -27,7 +27,7 @@ function createStartTimeText() {
     text.className = "TimeTextBox";
     text.type = "text";
     text.placeholder = "시작시간";
-    text.name = countId + "_" + "TimeTextList";
+    text.name = "TimeTextList";
     return text;
 }
 
@@ -37,7 +37,7 @@ function createFinishTimeText() {
     text.className = "TimeTextBox";
     text.type = "text";
     text.placeholder = "종료시간";
-    text.name = countId + "_" + "TimeTextList";
+    text.name = "TimeTextList";
     return text;
 }
 

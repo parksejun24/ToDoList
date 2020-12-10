@@ -11,18 +11,7 @@ body{
 input[type=text]:focus{
     outline: none;
 }
-
-input[type=checkbox] {
-    zoom: 1.5;
-}
     
-.checkBox{
-    size: 10px;
-}
-
-.checkBox{
-    size: 10px;
-}
 
 .ToDoTextBox{
     border-radius: 10px;
