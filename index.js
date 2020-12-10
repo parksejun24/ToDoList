@@ -5,13 +5,16 @@ function createInput() {
     var checkbox = document.createElement('input');
     checkbox.id = countId + "_" + "checkBox";
     checkbox.className = "checkBox"
+    checkbox.value = 'N'
     checkbox.type = "checkbox";
     checkbox.name = countId + "_" + "checkBoxList"
     checkbox.onclick = function () {
         if (checkbox.checked) {
+            checkbox.value = 'Y'
             num = String(checkbox.id).substring(0, 1);
             document.getElementById(num + "_" + "text").style.textDecoration = "line-through";
         } else {
+            checkbox.value = 'N'
             num = String(checkbox.id).substring(0, 1);
             document.getElementById(num + "_" + "text").style.textDecoration = "none";
         }
