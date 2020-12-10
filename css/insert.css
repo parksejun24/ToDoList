@@ -1,0 +1,96 @@
+body{
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+#title{
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+input[type=text]:focus{
+    outline: none;
+}
+
+input[type=checkbox] {
+    zoom: 1.5;
+}
+    
+.checkBox{
+    size: 10px;
+}
+
+.checkBox{
+    size: 10px;
+}
+
+.ToDoTextBox{
+    border-radius: 10px;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 400px;
+    text-decoration: none;
+}
+
+.TimeTextBox{
+    border-radius: 10px;
+    font-size: 20px;
+    margin-top: 10px;
+    width: 100px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.createSubjectText{
+    border-radius: 10px;
+    font-size: 20px;
+    margin-top: 10px;
+    width: 100px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+form{
+    margin-top: -34px;
+}
+
+#all{
+    margin: 0 auto;
+    width: 800px;
+    margin-top: 30px;
+}
+
+#save{
+    position: relative;
+    left: 14px;
+}
+
+.button{
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: 700;
+    width:100px;
+    height: 41px;
+    line-height: 12px;
+    background-color: #f8585b;
+    border: none;
+    color:#fff;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px;
+    border-radius:10px;
+    cursor: pointer;
+}
+
+#buttonTable{
+    position: relative;
+    top: 25px;
+}
+
+#list{
+    position: relative;
+    top: 15px;
+}
