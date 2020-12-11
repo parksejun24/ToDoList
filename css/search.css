@@ -32,7 +32,7 @@ input[type=text]:focus{
     margin-right: 10px;
     width: 400px;
     text-decoration: none;
-    border: 5px;
+    border: 0px;
 }
 
 .MediumTextBox{
