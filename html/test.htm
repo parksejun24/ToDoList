@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymelear.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>memberlist</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>id</td>
+                <td>todo</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="member:${list}">
+                <td th:text="${member.id}"></td>
+                <td th:text="${member.todo}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
