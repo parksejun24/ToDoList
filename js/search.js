@@ -1,20 +1,26 @@
-var countId = 0;
+var count = 0;
 var yes = 0;
 
 function createCheckBox() {
     var checkbox = document.createElement('input');
-    checkbox.id = countId + "_" + "checkBox";
+    checkbox.id = count + "_" + "checkBox";
     checkbox.className = "DonecheckBox"
     checkbox.value = 'N'
     checkbox.type = "checkbox";
-    checkbox.name = countId + "_" + "checkBoxList"
+    checkbox.name = "checkBoxList"
+    var n = count;
     checkbox.onclick = function () {
         if (checkbox.checked) {
-            checkbox.value = 'Y'
-            num = String(checkbox.id).substring(0, 1);
+            checkbox.value = 'Y';
+            var lastindex = n.toString();
+            var indexCount = lastindex.length;
+            var num = String(checkbox.id).substring(0, indexCount);
             document.getElementById(num + "_" + "ToDoTextList").style.textDecoration = "line-through";
         } else {
-            checkbox.value = 'N'
+            checkbox.value = 'N';
+            var lastindex = n.toString();
+            var indexCount = lastindex.length;
+            var num = String(checkbox.id).substring(0, indexCount);
             num = String(checkbox.id).substring(0, 1);
             document.getElementById(num + "_" + "ToDoTextList").style.textDecoration = "none";
         }
@@ -23,90 +29,81 @@ function createCheckBox() {
 }
 
 function createToDoText() {
-    var text = document.createElement('input');
-    text.id = countId + "_" + "ToDoTextList";
-    text.className = "ToDoTextBox";
-    text.type = "text";
-    text.name = countId + "_" + "ToDoTextList";
-    text.placeholder = "To-Do";
-    return text;
+    var toDoText = document.createElement('input');
+    toDoText.type = "text";
+    toDoText.placeholder = "To-Do";
+    toDoText.className = "ToDoTextBox";
+    toDoText.id = count + "_" + "ToDoTextBox";
+    toDoText.name = "ToDoText";
+    return toDoText;
 }
 
 function createSubjectText() {
-    var text = document.createElement('input');
-    text.id = countId + "_" + "SubjectTextList";
-    text.className = "TimeTextBox";
-    text.type = "text";
-    text.placeholder = "과목";
-    text.name = countId + "_" + "SubjectTextList";
-    return text;
+    var subjectText = document.createElement('input');
+    subjectText.type = "text";
+    subjectText.placeholder = "과목";
+    subjectText.className = "MediumTextBox";
+    subjectText.id = count + "_" + "SubjectTextBox";
+    subjectText.name = "SubjectText";
+    return subjectText;
 }
 
 function createStartTimeText() {
-    var text = document.createElement('input');
-    text.id = countId + "_" + "TimeTextBox1";
-    text.className = "TimeTextBox";
-    text.type = "text";
-    text.placeholder = "시작시간";
-    text.name = countId + "_" + "TimeTextList";
-    return text;
+    var startTimeText = document.createElement('input');
+    startTimeText.type = "text";
+    startTimeText.placeholder = "시작시간";
+    startTimeText.className = "MediumTextBox";
+    startTimeText.id = count + "_" + "StartTimeTextBox";
+    startTimeText.name = "StartTimeText";
+    return startTimeText;
 }
 
 function createFinishTimeText() {
-    var text = document.createElement('input');
-    text.id = countId + "_" + "TimeTextBox2";
-    text.className = "TimeTextBox";
-    text.type = "text";
-    text.placeholder = "종료시간";
-    text.name = countId + "_" + "TimeTextList";
-    return text;
+    var finishTimeText = document.createElement('input');
+    finishTimeText.type = "text";
+    finishTimeText.placeholder = "종료시간";
+    finishTimeText.className = "MediumTextBox";
+    finishTimeText.id = count + "_" + "FinishTimeTextBox";
+    finishTimeText.name = "FinishTimeText";
+    return finishTimeText;
 }
 
 function createBr() {
     var br = document.createElement("br");
-    br.id = countId + "_" + "br";
+    br.id = count + "_" + "br";
     return br;
 }
 
-function createlabel() {
+function createlabel() { //DeleteCheckBox를 꾸며주는 요소
     var label = document.createElement("label");
+    label.setAttribute("for", count + "_" + "DeleteButton");
     label.className = "DeleteButtonLabel";
-    label.id = countId + "_" + "DeleteButtonLabel";
-    label.setAttribute("for", countId + "_" + "DeleteButton");
+    label.id = count + "_" + "DeleteButtonLabel";
     return label;
 }
 
 function createDeleteButton() {
     var deleteButton = document.createElement('input');
-    deleteButton.id = countId + "_" + "DeleteButton";
-    deleteButton.className = "DeleteButton";
     deleteButton.type = "checkbox";
+    deleteButton.value = count; // delete checkButton의 순서를 value 값으로 저장
+    deleteButton.className = "DeleteButton";
+    deleteButton.id = count + "_" + "DeleteButton";
     deleteButton.name = "DeleteButton";
-    deleteButton.value = countId;
+
     deleteButton.onclick = function () {
         if (deleteButton.checked) {
             var lastindex = deleteButton.value.toString();
             var indexCount = lastindex.length;
             var num = String(deleteButton.id).substring(0, indexCount);
-            console.log(num + "_" + "ToDoTextList");
 
-            var where1 = document.getElementById(num + "_" + "ToDoTextList");
-            var where2 = document.getElementById(num + "_" + "SubjectTextList");
-            var where3 = document.getElementById(num + "_" + "TimeTextBox1");
-            var where4 = document.getElementById(num + "_" + "TimeTextBox2");
-            var where5 = document.getElementById(num + "_" + "checkBox");
-            var where6 = document.getElementById(num + "_" + "DeleteButton");
-            var where7 = document.getElementById(num + "_" + "DeleteButtonLabel");
-            var where8 = document.getElementById(num + "_" + "br");
-
-            list.removeChild(where1);
-            list.removeChild(where2);
-            list.removeChild(where3);
-            list.removeChild(where4);
-            list.removeChild(where5);
-            list.removeChild(where6);
-            list.removeChild(where7);
-            list.removeChild(where8);
+            list.removeChild(document.getElementById(num + "_" + "ToDoTextBox"));
+            list.removeChild(document.getElementById(num + "_" + "SubjectTextBox"));
+            list.removeChild(document.getElementById(num + "_" + "StartTimeTextBox"));
+            list.removeChild(document.getElementById(num + "_" + "FinishTimeTextBox"));
+            list.removeChild(document.getElementById(num + "_" + "checkBox"));
+            list.removeChild(document.getElementById(num + "_" + "DeleteButton"));
+            list.removeChild(document.getElementById(num + "_" + "DeleteButtonLabel"));
+            list.removeChild(document.getElementById(num + "_" + "br"));
         }
     }
     return deleteButton;
@@ -114,7 +111,7 @@ function createDeleteButton() {
 
 
 function clickButton() {
-    countId++;
+    count++;
     var where = document.getElementById("list");
     var input1 = createlabel();
     var input2 = createDeleteButton();

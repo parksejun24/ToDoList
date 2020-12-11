@@ -1,5 +1,9 @@
 body{
-    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Fjalla One', sans-serif,'Patua One', cursive;
+}
+
+body::-webkit-scrollbar{
+    display: none;
 }
 
 #title{
@@ -31,7 +35,7 @@ input[type=text]:focus{
     border: 0px;
 }
 
-.TimeTextBox{
+.MediumTextBox{
     border-radius: 10px;
     font-size: 20px;
     margin-top: 10px;
@@ -59,6 +63,7 @@ form{
     margin: 0 auto;
     width: 820px;
     margin-top: 30px;
+    margin-bottom: 80px;
 }
 
 #save{
@@ -67,7 +72,7 @@ form{
 }
 
 .button{
-    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Fjalla One', sans-serif,'Patua One', cursive;
     font-weight: 700;
     width:100px;
     height: 41px;
